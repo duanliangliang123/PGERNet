@@ -1,0 +1,6 @@
+PGERNet Overall PSNR: 22.54 dB, Overall SSIM: 0.7690
+PGERNet Overall PSNR: 22.54 dB, Overall SSIM: 0.7690
+PGERNet Overall PSNR: 22.60 dB, Overall SSIM: 0.7728
+PGERNet Overall PSNR: 22.54 dB, Overall SSIM: 0.7690
+PGERNetH Overall PSNR: 24.23 dB, Overall SSIM: 0.8087
+PGERNet Overall PSNR: 22.54 dB, Overall SSIM: 0.7690
