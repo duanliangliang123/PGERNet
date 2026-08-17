@@ -22,10 +22,14 @@ PGERNet/
 Pre-trained Model Checkpoints
 We provide two pre-trained checkpoints trained on different haze subsets. They can be downloaded here:
 
-Model VariantTraining SubsetParams (M)FLOPs (G)Test PSNR (dB)Download LinkPGERNet-BRNH6K-NH6.4724.7222.54Google DrivePGERNet-LRNH6K-H103.45392.2824.23Google Drive
-Note: The quantitative results above reflect the performance on their respective testing subsets as reported in the paper.
+| Model Variant | Training Subset | Params (M) | FLOPs (G) | Test PSNR (dB) | Download Link |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **PGERNet-B** | RNH6K-NH | 6.47 | 24.72 | 22.54 | [Google Drive](#) |
+| **PGERNet-L** | RNH6K-H | 103.45 | 392.28 | 24.23 | [Google Drive](#) |
 
-Download the .pth files and place them into the trained_models/ directory (e.g., trained_models/PGERNet_val.pth or trained_models/PGERNet.pth).
+> **Note:** The quantitative results above reflect the performance on their respective testing subsets as reported in the paper.
+
+Download the `.pth` files and place them into the `trained_models/` directory (e.g., `trained_models/PGERNet_val.pth` or `trained_models/PGERNet.pth`).
 
 ⚙️ Installation
 
