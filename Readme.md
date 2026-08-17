@@ -1,11 +1,3 @@
-📦 Datasets & Pre-trained Models
-
-RNH6K Dataset Download
-Download the synthesized benchmark dataset via Google Drive:
-
-RNH6K Benchmark (RNH6K-H & RNH6K-NH): Google Drive Download Link (Add your actual link here)
-
-After downloading, unzip and place the folders directly under the data/ directory:
 
 ## 📦 Datasets & Pre-trained Models
 
