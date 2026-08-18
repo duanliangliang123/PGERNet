@@ -21,12 +21,13 @@ PGERNet/
         └── test/
 
 Pre-trained Model Checkpoints
-We provide two pre-trained checkpoints trained on different haze subsets. They can be downloaded here:
+We provide two pre‑trained checkpoints trained on different haze subsets. They can be downloaded here:
 
 | Model Variant | Training Subset | Params (M) | FLOPs (G) | Test PSNR (dB) | Download Link |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **PGERNet-B** | RNH6K-NH | 6.47 | 24.72 | 22.54 | [Google Drive](https://drive.google.com/file/d/1T5NE42YNy0nDdU1epLb9fmN4RBeE-inY/view?usp=sharing) |
-| **PGERNet-L** | RNH6K-H | 103.45 | 392.28 | 24.23 | [Google Drive] (https://drive.google.com/file/d/1-NeRXyugWHdckvWyxSaYdy6eccvlVRKk/view?usp=sharing) |
+| **PGERNet‑B** | RNH6K‑NH | 6.47 | 24.72 | 22.54 | [Google Drive](https://drive.google.com/file/d/1T5NE42YNy0nDdU1epLb9fmN4RBeE-inY/view?usp=sharing) |
+| **PGERNet‑L** | RNH6K‑H | 103.45 | 392.28 | 24.23 | [Google Drive](https://drive.google.com/file/d/1-NeRXyugWHdckvWyxSaYdy6eccvlVRKk/view?usp=sharing) |
+
 
 > **Note:** The quantitative results above reflect the performance on their respective testing subsets as reported in the paper.
 
