@@ -20,7 +20,7 @@ PGERNet/
         ├── val/
         └── test/
 
-### 2. Pre-trained Model Checkpoints
+2. Pre-trained Model Checkpoints
 We provide two pre‑trained checkpoints trained on different haze subsets. They can be downloaded here:
 
 | Model Variant | Training Subset | Params (M) | FLOPs (G) | Test PSNR (dB) | Download Link |
