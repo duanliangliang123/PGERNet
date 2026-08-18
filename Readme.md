@@ -5,6 +5,7 @@
 Download the synthesized benchmark dataset via Google Drive:
 - **RNH6K-NH Benchmark:** *(https://drive.google.com/file/d/1tKBj5IXTe4mWzAAkpQVBmJsGH9rlFYRn/view?usp=sharing)*
 - **RNH6K-H Benchmark:** *(https://drive.google.com/file/d/1tKBj5IXTe4mWzAAkpQVBmJsGH9rlFYRn/view?usp=sharing)*
+
 After downloading, unzip and place the folders directly under the `data/` directory:
 
 ```text
