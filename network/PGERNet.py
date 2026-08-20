@@ -539,12 +539,12 @@ def calculate_flops_params():
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     print(f"Using device: {device}")
 
-    # 1. 初始化模型和输入
+    # 1. Initialize model and inputs
     model = PGERNet(dim=16, dim_mults=(1, 2, 4, 5),
                     num_blocks_encoder=[1, 1, 1, 1],
                     num_blocks_decoder=[1, 1, 1, 1]).to(device)
     
-    # 建议开启 cudnn.benchmark 以加速固定输入尺寸的推理
+    # Enable cudnn.benchmark for fixed input sizes
     if device == 'cuda':
         torch.backends.cudnn.benchmark = True
 
@@ -553,23 +553,23 @@ def calculate_flops_params():
 
     model.eval()
 
-    # 2. 专业的推理时间评测
+    # 2. Benchmark inference time
     warmup_iters = 50
     measure_iters = 100
     
     with torch.no_grad():
         print(f"Starting warm-up for {warmup_iters} iterations...")
-        # 预热阶段
+        # Warm-up phase
         for _ in range(warmup_iters):
             _ = model(rgb_input, nir_input)
             
         print(f"Measuring inference time for {measure_iters} iterations...")
-        # 测速阶段
+        # Measurement phase
         if device == 'cuda':
-            # 确保预热结束后的所有 GPU 任务已完成
+            # Synchronize before timing
             torch.cuda.synchronize()
             
-            # 使用 CUDA Event 进行高精度计时
+            # High-precision timing with CUDA Events
             starter, ender = torch.cuda.Event(enable_timing=True), torch.cuda.Event(enable_timing=True)
             
             starter.record()
@@ -577,15 +577,15 @@ def calculate_flops_params():
                 result = model(rgb_input, nir_input)
             ender.record()
             
-            # 必须等待测速任务在 GPU 上真正执行完毕
+            # Wait for GPU tasks to complete
             torch.cuda.synchronize()
             
-            # elapsed_time 返回的是毫秒 (ms)
+            # Calculate average time in ms
             total_time_ms = starter.elapsed_time(ender)
             avg_time_ms = total_time_ms / measure_iters
             
         else:
-            # CPU 端计时，使用更高精度的 perf_counter
+            # High-precision timing for CPU
             start = time.perf_counter()
             for _ in range(measure_iters):
                 result = model(rgb_input, nir_input)
@@ -598,8 +598,8 @@ def calculate_flops_params():
         print(f"FPS: {1000 / avg_time_ms:.2f}")
         print("Output shape:", tuple(result.shape))
 
-    # 3. 计算 FLOPs 和 Params
-    # 将模型和数据移回 CPU 以防止某些算子在 GPU 上计算 FLOPs 时报错
+    # 3. Calculate FLOPs and Params
+    # Move to CPU to prevent potential profiling errors
     model.to('cpu')
     rgb_input = rgb_input.to('cpu')
     nir_input = nir_input.to('cpu')
